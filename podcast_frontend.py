@@ -119,9 +119,8 @@ def create_dict_from_json_files(folder_path):
 
 def process_podcast_info(url):
     f = modal.Function.lookup("corise-podcast-project", "process_podcast")
-    # output = f.call(url, '/content/podcast/') # screams that its deprecated and should be replaced w f.remote
-    output = f.remote(url, '/content/podcast/')
+    output = f.call(url, '/content/podcast/')
     return output
-
+    
 if __name__ == '__main__':
     main()
